@@ -42,24 +42,19 @@ import {
 } from "firebase/firestore";
 
 // Инициализация базы данных
-let app, auth, db, appId;
-try {
-  const firebaseConfig = {
-    apiKey: "AIzaSyAbXG4HrWn-C2ZCSWCalRZk_Is0APL2yq8",
-    authDomain: "list-calculator-cbf36.firebaseapp.com",
-    projectId: "list-calculator-cbf36",
-    storageBucket: "list-calculator-cbf36.firebasestorage.app",
-    messagingSenderId: "298742786786",
-    appId: "1:298742786786:web:bca0e09f25684547304cbb",
-    measurementId: "G-22KKLSPCKP",
-  };
-  app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-  appId = typeof __app_id !== "undefined" ? __app_id : "default-app-id";
-} catch (e) {
-  console.error("Cloud init error", e);
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyAbXG4HrWn-C2ZCSWCalRZk_Is0APL2yq8",
+  authDomain: "list-calculator-cbf36.firebaseapp.com",
+  projectId: "list-calculator-cbf36",
+  storageBucket: "list-calculator-cbf36.firebasestorage.app",
+  messagingSenderId: "298742786786",
+  appId: "1:298742786786:web:bca0e09f25684547304cbb",
+  measurementId: "G-22KKLSPCKP",
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const appId = "list-calculator";
 
 const translations = {
   ru: {
