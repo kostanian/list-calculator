@@ -234,18 +234,12 @@ const App = () => {
     if (!auth) return;
     const initAuth = async () => {
       try {
-        await setPersistence(auth, browserLocalPersistence);
         await getRedirectResult(auth);
       } catch (e) {
         console.error(e);
       }
       try {
-        if (
-          typeof __initial_auth_token !== "undefined" &&
-          __initial_auth_token
-        ) {
-          await signInWithCustomToken(auth, __initial_auth_token);
-        } else {
+        if (!auth.currentUser) {
           await signInAnonymously(auth);
         }
       } catch (e) {
