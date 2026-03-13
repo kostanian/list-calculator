@@ -682,7 +682,15 @@ const App = () => {
                 onClick={() => setShowAuthModal(true)}
                 className={`p-1.5 transition-colors ${user && !user.isAnonymous ? "text-blue-500" : "text-neutral-400"}`}
               >
-                <UserCircle size={20} />
+                {user && !user.isAnonymous && user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt="avatar"
+                    className="w-6 h-6 rounded-full object-cover"
+                  />
+                ) : (
+                  <UserCircle size={20} />
+                )}
               </button>
             </div>
           </div>
