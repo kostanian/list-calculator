@@ -30,6 +30,8 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
 } from "firebase/auth";
 import {
@@ -231,6 +233,11 @@ const App = () => {
   useEffect(() => {
     if (!auth) return;
     const initAuth = async () => {
+      try {
+        await getRedirectResult(auth);
+      } catch (e) {
+        console.error(e);
+      }
       try {
         if (
           typeof __initial_auth_token !== "undefined" &&
