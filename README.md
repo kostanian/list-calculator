@@ -35,12 +35,10 @@ Built as a lightweight alternative to spreadsheets for quick calculations — gr
 - **Download as CSV** — Excel-compatible with proper encoding (BOM) and quote escaping
 - **Native share** — uses Web Share API on supported devices, falls back to clipboard
 
-#### Internationalization
-4 fully translated languages:
+#### Bilingual Interface
+The app interface is available in two languages with a toggle in the top-left corner:
 - Russian (default)
 - English
-- Spanish
-- Chinese
 
 #### UX Details
 - Mobile-first layout with desktop preview mode (centered card with max-width)
@@ -57,7 +55,10 @@ Built as a lightweight alternative to spreadsheets for quick calculations — gr
 | Bundler | [Vite 8](https://vite.dev/) |
 | Styling | [Tailwind CSS 3](https://tailwindcss.com/) + [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate) |
 | Icons | [Lucide React](https://lucide.dev/) |
-| Auth & Database | [Firebase 12](https://firebase.google.com/) (Authentication + Firestore) |
+| Auth | [Firebase Authentication](https://firebase.google.com/) (Google OAuth) |
+| Database | [Cloud Firestore](https://firebase.google.com/) |
+| Hosting | [Vercel](https://vercel.com/) |
+| Repository | [GitHub](https://github.com/kostanian/list-calculator) |
 | Linting | [ESLint 9](https://eslint.org/) with React Hooks & Refresh plugins |
 
 ### Getting Started
@@ -143,12 +144,10 @@ MIT
 - **Скачивание в CSV** — совместимость с Excel, корректная кодировка (BOM) и экранирование кавычек
 - **Нативная отправка** — Web Share API на поддерживаемых устройствах, иначе копирование в буфер
 
-#### Интернационализация
-4 полностью переведённых языка:
+#### Двуязычный интерфейс
+Интерфейс приложения доступен на двух языках с переключателем в верхнем левом углу:
 - Русский (по умолчанию)
 - Английский
-- Испанский
-- Китайский
 
 #### Детали UX
 - Mobile-first вёрстка с десктопным превью (центрированная карточка с max-width)
@@ -165,7 +164,10 @@ MIT
 | Сборщик | [Vite 8](https://vite.dev/) |
 | Стили | [Tailwind CSS 3](https://tailwindcss.com/) + [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate) |
 | Иконки | [Lucide React](https://lucide.dev/) |
-| Авторизация и БД | [Firebase 12](https://firebase.google.com/) (Authentication + Firestore) |
+| Авторизация | [Firebase Authentication](https://firebase.google.com/) (Google OAuth) |
+| База данных | [Cloud Firestore](https://firebase.google.com/) |
+| Хостинг | [Vercel](https://vercel.com/) |
+| Репозиторий | [GitHub](https://github.com/kostanian/list-calculator) |
 | Линтинг | [ESLint 9](https://eslint.org/) с плагинами React Hooks и Refresh |
 
 ### Начало работы
