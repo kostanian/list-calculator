@@ -16,7 +16,6 @@ import {
   UserCircle,
   LogOut,
   FilePlus,
-  Globe,
   Database,
   Info,
 } from "lucide-react";
@@ -599,22 +598,28 @@ const App = () => {
         {/* HEADER */}
         <div className="bg-neutral-50 px-3 py-2 border-b border-neutral-200 shrink-0">
           <div className="h-4 mb-2 flex items-center justify-between">
-            {loadedArchiveName ? (
-              <div className="text-[9px] text-red-500 font-bold uppercase tracking-wider flex items-center gap-1 truncate">
-                <Archive size={10} />{" "}
-                <span className="truncate">
-                  {loadedArchiveName} {isModified && "*"}
-                </span>
-                <button
-                  onClick={() => handleActionClick("close")}
-                  className="p-0.5 text-red-400 hover:bg-red-50 rounded-full transition-colors"
-                >
-                  <X size={10} strokeWidth={3} />
-                </button>
-              </div>
-            ) : (
-              <div />
-            )}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setLang(lang === "ru" ? "en" : "ru")}
+                className="text-[9px] font-bold uppercase tracking-wider text-neutral-400 hover:text-blue-500 transition-colors"
+              >
+                {lang === "ru" ? "EN" : "RU"}
+              </button>
+              {loadedArchiveName && (
+                <div className="text-[9px] text-red-500 font-bold uppercase tracking-wider flex items-center gap-1 truncate">
+                  <Archive size={10} />{" "}
+                  <span className="truncate">
+                    {loadedArchiveName} {isModified && "*"}
+                  </span>
+                  <button
+                    onClick={() => handleActionClick("close")}
+                    className="p-0.5 text-red-400 hover:bg-red-50 rounded-full transition-colors"
+                  >
+                    <X size={10} strokeWidth={3} />
+                  </button>
+                </div>
+              )}
+            </div>
             {(loadedArchiveId || items.length > 0) && (
               <button
                 onClick={() => handleActionClick("new")}
@@ -1028,37 +1033,6 @@ const App = () => {
                 >
                   <X size={16} />
                 </button>
-              </div>
-              <div className="mb-3">
-                <div className="flex items-center gap-2 mb-1.5 text-neutral-300 uppercase text-[8px] font-bold tracking-[0.2em]">
-                  <Globe size={10} /> {t.langSelect}
-                </div>
-                <div className="grid grid-cols-2 gap-1.5">
-                  <button
-                    onClick={() => setLang("ru")}
-                    className={`py-1.5 rounded-lg border text-[9px] font-bold transition-all ${lang === "ru" ? "bg-blue-600 border-blue-600 text-white shadow-sm" : "bg-neutral-50 border-transparent text-neutral-500"}`}
-                  >
-                    РУС
-                  </button>
-                  <button
-                    onClick={() => setLang("en")}
-                    className={`py-1.5 rounded-lg border text-[9px] font-bold transition-all ${lang === "en" ? "bg-blue-600 border-blue-600 text-white shadow-sm" : "bg-neutral-50 border-transparent text-neutral-500"}`}
-                  >
-                    ENG
-                  </button>
-                  <button
-                    onClick={() => setLang("es")}
-                    className={`py-1.5 rounded-lg border text-[9px] font-bold transition-all ${lang === "es" ? "bg-blue-600 border-blue-600 text-white shadow-sm" : "bg-neutral-50 border-transparent text-neutral-500"}`}
-                  >
-                    ESP
-                  </button>
-                  <button
-                    onClick={() => setLang("zh")}
-                    className={`py-1.5 rounded-lg border text-[9px] font-bold transition-all ${lang === "zh" ? "bg-blue-600 border-blue-600 text-white shadow-sm" : "bg-neutral-50 border-transparent text-neutral-500"}`}
-                  >
-                    中文
-                  </button>
-                </div>
               </div>
               <div className="border-t pt-3 text-center">
                 {user && !user.isAnonymous ? (
